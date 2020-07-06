@@ -7,6 +7,7 @@ html {
 }
 body {
   font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
 }
 
 p {
@@ -47,9 +48,19 @@ button {
 .btn-dark {
   background: #333f59;
 }
-
-.site-bg {
-  background: #050f11 url(../assets/hero-image.png) no-repeat center 50px ;
+.site-bg:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 1000%;
+  height: 760px;
+  z-index: -2;
+  background: #000;
+}
+.site-bg:after {
+  content: '';
+  background: #000 url(../assets/hero-image.png) no-repeat center 50px ;
   position: absolute;
   left: 50%;
   top: 0;
@@ -61,11 +72,7 @@ button {
   z-index: -1;
   box-shadow: inset 0px 0px 147px 86px rgba(0,0,0,0.94);
 }
-@media (max-width: 1600px) {
-  /* .site-bg {
-    width: 100%;
-  } */
-}
+
 .site-donate {
   position: fixed;
   right: 0;
@@ -74,10 +81,11 @@ button {
   transform: rotate(-90deg);
   transform-origin: right bottom;
   border: none;
-  padding: 8px 25px;
+  padding: 10px 30px;
   color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
+  border-radius: 3px;
 }
 .section-wrapper {
   max-width: 1400px;
@@ -214,7 +222,7 @@ button {
 }
 .raffle-column {
   flex-basis: 50%;
-  padding: 0 24px;
+  padding: 0 30px;
 }
 .raffle-column.buy {
   border-right: solid 1px #069a6a;
@@ -244,22 +252,46 @@ button {
 .countdown p {
   margin-bottom: 1rem;
 }
-.countdown .time {
+
+.countdown__timer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.countdown__label {
+
+}
+.countdown__number {
   color: #fff;
   font-size: 6rem;
   font-weight: 300;
-  display: block;
 }
-.countdown .time-labels {
-  display: flex;
-  justify-content: space-around;
+.countdown__divider {
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 300;
+  margin-top: -0.5rem;
+  padding: 0 0.5rem;
 }
-.time-labels > span {
+.countdown__number::after {
   color: #fff;
   text-transform: uppercase;
+  display: block;
   font-size: 1rem;
   font-weight: 700;
 }
+.countdown__number--min::after {
+  content: 'mins';
+}
+.countdown__number--sec::after {
+  content: 'secs';
+
+}
+.countdown__divider {
+
+}
+
+
 .section-column.welcome-msg {
   flex-basis: 54%;
   padding-top: 100px;
@@ -388,6 +420,8 @@ button {
   margin-right: 1.6rem;
   background-color: #00b47a;
   padding: 8px;
+  max-width: 50px;
+  max-height: 50px;
 }
 .chat-item__image img {
   max-width: 100%;
@@ -721,7 +755,17 @@ button {
 }
 
 
-
+/********************************************************
+ * Mobile/Responsive Styles
+ */
+@media only screen and (max-width: 1400px) {
+  .site-bg:after {
+    width: 100%;
+  }
+  .site-bg:before {
+    display: none;
+  }
+}
 /* hidden hamburger menu, mobile only */
 .site-nav__toggle {
   display: none;
@@ -738,7 +782,7 @@ button {
   p {
     line-height: 1.75;
   }
-  .site-bg {
+  .site-bg:after {
     height: 100%;
     background-size: cover;
     background-position: 83% 1rem;
@@ -835,7 +879,7 @@ button {
   .stage-select {
     display: flex;
     justify-content: space-around;
-    padding: 28px;
+    padding: 0 3rem;
   }
   .button-stage {
     flex-grow: 1;
@@ -859,7 +903,8 @@ button {
   .hero-heading {
     background-size: 100%;
     width: 100%;
-    margin-top: 8rem;
+    margin-top: 20rem;
+    padding-top: 12rem;
   }
   .stage-schedule {
     padding: 28px;
