@@ -251,5 +251,62 @@
       <span class="footer__plug">Designed By <a href="#!">OPTIX SOLUTIONS</a></span>
     </section>
   </footer>
+
+  <div class="modal__overlay">
+    <div class="modal">
+      <h2 class="heading heading-lvl2 heading--donate">Every little helps</h2>
+
+      <form action="" class="form">
+
+        <div class="form__field">
+          <label class="form__label--text">
+            <span class="form__label-text">Name</span>
+            <input type="text" class="form__input" placeholder="Name">
+          </label>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label--text">
+            <span class="form__label-text">Email</span>
+            <input type="email" class="form__input" placeholder="Email">
+          </label>
+        </div>
+
+        <p>Quick Donation</p>
+        <div class="form__field--radio-btns">
+          <label class="form__label--radio">
+            $5.00
+            <input class="form__input-radio" type="radio" name="quick_donation" value="$5.00">
+          </label>
+          <label class="form__label--radio">
+            $10.00
+            <input class="form__input-radio" type="radio" name="quick_donation" value="$10.00">
+          </label>
+          <label class="form__label--radio">
+            $20.00
+            <input class="form__input-radio" type="radio" name="quick_donation" value="$20.00">
+          </label>
+        </div>
+
+        <div class="form__field form__field--slider">
+          <label class="form__label-range" for="formRange">Slide to adjust amount</label>
+          <input type="range" id="formRange" class="form__input--range" value="42" min="5" max="500">
+          <input type="text" class="form__input--readonly" readonly value="$42.00">
+        </div>
+
+        <div class="form__field form__field--spaced">
+          <label class="form__label-checkbox">
+            <input type="checkbox" class="form__input--checkbox" checked>
+            Please share my donation on the live chat.
+          </label>
+        </div>
+
+        <div class="form__field form__field--centered">
+          <button type="submit" class="form__submit">Submit Donation</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
 </body>
 </html>
