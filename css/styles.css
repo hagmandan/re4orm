@@ -4,13 +4,20 @@
 html {
   font-size: 67.5%;
   line-height: 1.15;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 body {
   font-family: 'Lato', sans-serif;
   overflow-x: hidden;
   position: relative;
 }
-
+.page-login {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 p {
   font-size: 1.4rem;
   line-height: 2;
@@ -765,7 +772,7 @@ button {
   z-index: 999;
 }
 .modal {
-  width: 600px;
+  max-width: 600px;
   background: rgba(255,255,255,0.105);
   padding: 5rem 10rem;
   box-sizing: border-box;
@@ -776,6 +783,8 @@ button {
   transform: translate(-50%, 0);
   position: absolute;
   border-radius: 3px;
+  max-height: 100%;
+  overflow-y: auto;
 }
 .modal p {
   color: #efefef;
@@ -831,9 +840,11 @@ button {
 .form__label--radio {
   border: 1px solid #01b47a;
   border-radius: 3px;
-  padding: 1.4rem 4rem;
+  padding: 1.4rem 0;
+  flex-basis: 30%;
   cursor: pointer;
   color: #01b47a;
+  text-align: center;
 }
 .form__label--radio:hover {
   background-color: rgba(255,255,255,0.1);
@@ -1046,6 +1057,12 @@ button {
     margin-top: 20rem;
     padding-top: 12rem;
   }
+  .page-login .hero-heading {
+    margin-top: 2rem;
+  }
+  .page-login .hero--login {
+    margin-top: 0;
+  }
   .stage-schedule {
     padding: 28px;
   }
@@ -1125,4 +1142,67 @@ button {
     display: block;
     padding: 2rem 0;
   }
+
+
+  .modal {
+    width: 100%;
+    padding: 1rem;
+  }
+  .hero--login {
+    width: 100%;
+  }
+} /* End mobile*/
+
+
+
+/**
+ *
+ * Login
+ */
+.page-login {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+}
+.site-bg--login:after {
+  height: 100%;
+}
+.hero--login {
+  max-width: 600px;
+  padding: 5rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 5rem auto 0;
+  text-align: center;
+}
+.hero--login::before {
+  content: '';
+  display: block;
+  background: #000;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.hero--login p {
+  color: #fff;
+}
+
+.hero--login hr {
+  border-top: 0;
+  border-color: #5b666c;
+  width: 100%;
+  margin: 3rem 0;
+}
+.hero--login .heading-lvl3 {
+  color: #fff;
+}
+.facebook-button-wrapper {
+
+}
+.fb-login-button {
+  text-align: center;
 }
